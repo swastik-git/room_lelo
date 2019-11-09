@@ -7,9 +7,10 @@ from django.db import models
 
 class Room(models.Model):
 	image=models.ImageField(null=True, blank=True, upload_to="rooms_images/")
-	availibility = models.CharField(max_length=30)
+	availibility = models.BooleanField(blank=True,null=True)
 	location = models.CharField(max_length=30)
 	rent = models.CharField(max_length=30)
+	facility = models.CharField(max_length=100,blank=True,null=True)
 	owner_number = models.CharField(max_length=30)
 	owner_name = models.CharField(max_length=30)
 

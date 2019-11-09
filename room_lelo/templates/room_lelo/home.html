@@ -18,12 +18,14 @@
     {% for detail in details %}
     	
     	<div class="col-4">
-    		<div class="card" style="width: 18rem;">
-  <img src={{detail.image}} class="card-img-top" alt="...">
+    		<div class="card my-3" style="width: 18rem;">
+  <img src={{detail.image.url}} class="card-img-top" alt="...">
   <div class="card-body">
-  	<h5 class="card-title">{{detail.availibility}}</h5>
+  	<!-- <h5 class="card-title">{{detail.availibility}}</h5> -->
     <h5 class="card-title">Location:{{detail.location}}</h5>
     <h5 class="card-title">Rent:{{detail.rent}}</h5>
+
+    <h5 class="card-title">{{detail.facility}}</h5>
     <h5 class="card-title">{{detail.owner_number}}</h5>
     <h5 class="card-title">{{detail.owner_name}}</h5>
    
@@ -35,6 +37,7 @@
 
 
 	{% endfor %}
+
     
 </div>
 

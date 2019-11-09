@@ -5,5 +5,5 @@ from .models import Room
 
 
 def rooms(request):
-	details = Room.objects.all()
+	details = Room.objects.all().filter(availibility=True)
 	return render(request, 'room_lelo/home.html', {"details":details})
