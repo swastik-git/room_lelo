@@ -5,5 +5,12 @@ from .models import Room
 
 
 def rooms(request):
-	details = Room.objects.all().filter(availibility=True)
+	try:
+		search=request.GET['search']
+	except:
+		search=""
+	if search:
+		details = Room.objects.all().filter(availibility=True,location__icontains=search)
+	else:		
+		details = Room.objects.all().filter(availibility=True)
 	return render(request, 'room_lelo/home.html', {"details":details})
